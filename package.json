@@ -1,0 +1,16 @@
+{
+  "name": "facebook-messenger",
+  "version": "1.0.0",
+  "description": "facebook para messenger usando nodejs + codeneo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "joseph esteban",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "request": "^2.75.0"
+  }
+}
