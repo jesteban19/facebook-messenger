@@ -2,13 +2,15 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 
-const APP_TOKEN = 'EAAQu2RU44mgBAElNh4Eu5e7T6w13MFawgjp5l0R5kgxV7xNzGmBAdYjrdsOeVMBKRemQbJBJiHFPXwgj6WMaRxPXVZC0nL9uU1AN4QZCJZAdTlOZB5WV4MGVGB8y6zZAL3oho3dfptW6FDwtC3FveKN2TJ0oCuRHevUVgjZARxWwZDZD'
+const APP_TOKEN = 'EAAQu2RU44mgBAOiPVo1PyTJE4x47tASKMZAQJ56mBlV5YrrpEZB2eACt2WrFXfaOfNRX4bAiYCyaE9bdNJxxFz9yvXLjFQipWZBysdUtZB743jn71ICGA7D0QKW9vZCOHPPPfjb8ywwtB4FGCkaFd3M7IqFzceW0itcqAXZBRc8wZDZD'
 
 var app = express()
 
 app.use(bodyParser.json())
 
-app.listen(3000,function(){
+var PORT = process.env.PORT || 3000;
+
+app.listen(PORT,function(){
 	console.log('Server listen localhost:3000')
 })
 
@@ -181,5 +183,6 @@ function callSendAPI(messageData){
 }
 
 function isContain(texto, word){
+	if(typeof texto=='undefined' || texto.lenght<=0) return false
 	return texto.indexOf(word) > -1
 }
